@@ -8,3 +8,5 @@ RUN /bin/bash -c 'cd /dev/shm && \
   dpkg -i libc-ares2_1.10.0-2+deb8u2_armel.deb && \
   dpkg -i libv8-3.14.5_3.14.5.8-8.1_armel.deb && \
   dpkg -i nodejs_0.10.29~dfsg-2_armel.deb'
+COPY node_modules /usr/local/lib/node_modules
+COPY set_node_path.sh /etc/profile.d/
