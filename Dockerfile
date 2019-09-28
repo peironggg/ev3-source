@@ -9,3 +9,5 @@ RUN /bin/bash -c 'cd /dev/shm && \
   dpkg -i libv8-3.14.5_3.14.5.8-8.1_armel.deb && \
   dpkg -i nodejs_0.10.29~dfsg-2_armel.deb'
 COPY node_modules /usr/local/lib/node_modules
+COPY source3 /usr/local/bin/
+RUN /bin/bash -c 'chmod a+x /usr/local/bin/source3'
