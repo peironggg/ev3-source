@@ -28,8 +28,8 @@ You need to have the dependencies from the previous section. Additionally, you n
 
 Run:
 
-- `brickstrap create-tar ev3-source ev3-source.tar`
-- `brickstrap create-image ev3-source.tar ev3-source.img`
+- `./brickstrap.sh create-tar ev3-source ev3-source.tar`
+- `./brickstrap.sh create-image ev3-source.tar ev3-source.img`
 
 ### Dependencies
 
