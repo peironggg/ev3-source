@@ -8,10 +8,10 @@ TMPDIR=$(mktemp -d)
 TARFILE="$TMPDIR/ev3-source.tar"
 IMGFILE="$TMPDIR/ev3-source.img"
 
-sh ./brickstrap.sh create-tar ev3-source "$TARFILE" || exit 1
+bash ./brickstrap.sh create-tar ev3-source "$TARFILE" || exit 1
 export BRICKSTRAP_IMAGE_FILE_SIZE=$(echo $(($(du -m "$TARFILE" | cut -f1)*5/4)) | cut -d. -f1)M
 echo 'Using BRICKSTRAP_IMAGE_FILE_SIZE='$BRICKSTRAP_IMAGE_FILE_SIZE
-sh ./brickstrap.sh create-image "$TARFILE" "$IMGFILE" || exit 1
+bash ./brickstrap.sh create-image "$TARFILE" "$IMGFILE" || exit 1
 pushd "$TMPDIR"
 zip -v9 ev3-source.img.zip ev3-source.img
 popd
