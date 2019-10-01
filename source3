@@ -58,6 +58,8 @@ require('/usr/local/lib/node_modules/ev3_source.js');
         }
 
         if (result === undefined) {
+            console.error("Warning: using Babel; this may take a while.");
+            console.error("Please let your Avenger know if you see this message!");
             var babel = require('/usr/local/lib/node_modules/babel-transpiler.js');
             transformed = babel.transform(source_in);
             result = new Function(transformed);
