@@ -1,6 +1,7 @@
 #!/usr/bin/nodejs
 
 require('/usr/local/lib/node_modules/ev3_source.js');
+var parser = require('/usr/local/lib/node_modules/parser.js');
 
 eval((function() {
     if (process.argv.length != 3) {
@@ -9,6 +10,5 @@ eval((function() {
     }
 
     var source_in = require('fs').readFileSync(process.argv[2], 'utf-8');
-    // TODO: transpile
-    return source_in;
+    return parser.parse(source_in);
 })());
