@@ -4,13 +4,27 @@ For CS1101S Robot missions.
 
 We preinstall Node and a transpiler so students can simply use `source3 file.js` to execute a Source &sect;3 file.
 
-## How to enter the image (on your PC)
+## Build instructions
+
+Make sure you have all the dependencies installed:
+
+- Docker
+- Static QEMU + binfmt_misc configuration to use QEMU
+- libguestfs
+
+Then run `build.sh`, and you should get a `ev3-source.img.gz`. The file can be decompressed and written to an SD card.
+
+(If you are distributing it, you might want to zip it instead, so it's easier for students on Windows to use.)
+
+## Manual instructions
+
+### How to enter the image (on your PC)
 
 Make sure you have Docker and static QEMU installed, and binfmt_misc configured to invoke QEMU for foreign architecture binaries.
 
 After you have the dependencies installed, you can run `docker build -t ev3-source .`, then `docker run --rm -it ev3-source su -l robot`.
 
-### Dependencies
+#### Dependencies
 
 If you're on Ubuntu:
 
@@ -22,7 +36,7 @@ If you're on Arch:
 - Install Docker: `pacman -S docker`
 - Install [`qemu-user-static-bin` from the AUR](https://aur.archlinux.org/packages/qemu-user-static-bin).
 
-## How to build the bootable image
+### How to build the bootable image
 
 You need to have the dependencies from the previous section. Additionally, you need `libguestfs` and [Brickstrap](https://github.com/ev3dev/brickstrap) (you just need the [shell script](https://raw.githubusercontent.com/ev3dev/brickstrap/master/src/brickstrap.sh)).
 
@@ -31,7 +45,7 @@ Run:
 - `./brickstrap.sh create-tar ev3-source ev3-source.tar`
 - `./brickstrap.sh create-image ev3-source.tar ev3-source.img`
 
-### Dependencies
+#### Dependencies
 
 If you're on Ubuntu:
 
