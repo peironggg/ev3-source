@@ -1,8 +1,14 @@
 dist: bionic
 language: node_js
+node_js:
+  - 12
 
 install: ./.travis_install.sh
 script: ./.travis_build.sh
+
+cache:
+  directories:
+   - /home/travis/.rvm/
 
 addons:
   apt:
