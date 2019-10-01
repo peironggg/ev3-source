@@ -1,4 +1,5 @@
 brickstrap.sh
 node_modules/babel-transpiler.js
+node_modules/parser.js
 *.img
 *.gz
