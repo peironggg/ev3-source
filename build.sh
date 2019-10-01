@@ -11,7 +11,11 @@ IMGFILE="$TMPDIR/ev3-source.img"
 bash ./brickstrap.sh create-tar ev3-source "$TARFILE" || exit 1
 export BRICKSTRAP_IMAGE_FILE_SIZE=$(echo $(($(du -m "$TARFILE" | cut -f1)*5/4)) | cut -d. -f1)M
 echo 'Using BRICKSTRAP_IMAGE_FILE_SIZE='$BRICKSTRAP_IMAGE_FILE_SIZE
-bash ./brickstrap.sh create-image "$TARFILE" "$IMGFILE" || exit 1
+if [ -n "$TRAVIS" ]; then
+    sudo bash ./brickstrap.sh create-image "$TARFILE" "$IMGFILE" || exit 1
+else
+    bash ./brickstrap.sh create-image "$TARFILE" "$IMGFILE" || exit 1
+fi
 pushd "$TMPDIR"
 zip -v9 ev3-source.img.zip ev3-source.img
 popd

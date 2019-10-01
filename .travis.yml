@@ -16,3 +16,4 @@ addons:
     packages:
     - libguestfs-tools
     - qemu-user-static
+    - qemu-kvm
