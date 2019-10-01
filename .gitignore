@@ -1,3 +1,4 @@
 brickstrap.sh
+node_modules/babel-transpiler.js
 *.img
 *.gz

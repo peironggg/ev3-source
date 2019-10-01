@@ -1,14 +1,74 @@
 #!/usr/bin/nodejs
 
-require('/usr/local/lib/node_modules/ev3_source.js');
-var parser = require('/usr/local/lib/node_modules/parser.js');
+if (process.argv.length != 3) {
+    console.error("Usage: source3 <file name>");
+    process.exit(1);
+}
 
-eval((function() {
-    if (process.argv.length != 3) {
-        console.error("Usage: source3 <file name>");
-        process.exit(1);
+require('/usr/local/lib/node_modules/ev3_source.js');
+
+(function() {
+    var fs = require('fs');
+    var path = require('path');
+    var need_to_transpile = true;
+
+    var source_fn = process.argv[2];
+    var cache_fn = path.join(path.dirname(source_fn),
+        "." + path.basename(source_fn) + ".cache");
+
+    try {
+        var source_stat = fs.statSync(source_fn);
+        var cache_stat = fs.statSync(cache_fn);
+
+        // look at both mtime and ctime in case mtime is set by the file transfer tool
+        // but ctime is not
+        need_to_transpile = Math.max(source_stat.mtime.getTime(), source_stat.ctime.getTime()) >
+            Math.max(cache_stat.mtime.getTime(), cache_stat.ctime.getTime());
+    } catch (e) {
+        // swallow error, we'll just transpile
     }
 
-    var source_in = require('fs').readFileSync(process.argv[2], 'utf-8');
-    return parser.parse(source_in);
-})());
+    var result = undefined;
+
+    if (!need_to_transpile) {
+        try {
+            var es5_in = fs.readFileSync(cache_fn, { encoding: 'utf8' });
+            result = new Function(es5_in);
+        } catch (e) {
+            // swallow error, we'll just transpile
+            need_to_transpile = true;
+        }
+    }
+
+    if (need_to_transpile) {
+        var transformed = undefined;
+        var source_in = fs.readFileSync(source_fn, { encoding: 'utf8' });
+
+        var parser = require('/usr/local/lib/node_modules/parser.js');
+        transformed = parser.parse(source_in);
+        try {
+            result = new Function(transformed);
+        } catch (e) {
+            if (e instanceof SyntaxError) {
+                // jison returned invalid JS
+                // let's use Bison
+            } else {
+                throw e;
+            }
+        }
+
+        if (result === undefined) {
+            var babel = require('/usr/local/lib/node_modules/babel-transpiler.js');
+            transformed = babel.transform(source_in);
+            result = new Function(transformed);
+        }
+
+        try {
+            fs.writeFileSync(cache_fn, transformed);
+        } catch (e) {
+            // failed to cache, swallow error
+        }
+    }
+
+    return result;
+})()();

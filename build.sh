@@ -5,6 +5,11 @@ if [ ! -e brickstrap.sh ]; then
     exit 1
 fi
 
+pushd babel-transpiler
+yarn install && yarn build
+popd
+cp babel-transpiler/dist/babel-transpiler.js node_modules/babel-transpiler.js
+
 TMPFILE=$(mktemp)
 TMPIMG=$(mktemp)
 docker build -t ev3-source .
