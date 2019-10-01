@@ -8,7 +8,8 @@ script: ./.travis_build.sh
 
 cache:
   directories:
-   - /home/travis/.rvm/
+   - babel-transpiler/node_modules
+   - sourcetoes5/node_modules
 
 addons:
   apt:
