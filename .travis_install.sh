@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 pushd babel-transpiler && yarn install && popd || exit 1
 pushd sourcetoes5 && yarn install && popd || exit 1
