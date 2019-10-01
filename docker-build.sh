@@ -6,15 +6,13 @@ if [ ! -e brickstrap.sh ]; then
 fi
 
 pushd sourcetoes5
-yarn install && yarn jison parser.jison
+yarn install && yarn jison parser.jison || exit 1
 popd
-cp sourcetoes5/parser.js node_modules/parser.js
+cp sourcetoes5/parser.js node_modules/parser.js || exit 1
 
 pushd babel-transpiler
-yarn install && yarn build
+yarn install && yarn build || exit 1
 popd
-cp babel-transpiler/dist/babel-transpiler.js node_modules/babel-transpiler.js
+cp babel-transpiler/dist/babel-transpiler.js node_modules/babel-transpiler.js || exit 1
 
-TMPFILE=$(mktemp)
-TMPIMG=$(mktemp)
-docker build -t ev3-source .
+docker build -t ev3-source . || exit 1

@@ -3,8 +3,18 @@
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 source "$DIR/docker-build.sh"
 
-sh ./brickstrap.sh create-tar ev3-source "$TMPFILE"
-sh ./brickstrap.sh create-image "$TMPFILE" "$TMPIMG"
-gzip -vc "$TMPIMG" > ./ev3-source.img.gz
-rm "$TMPFILE" "$TMPIMG"
->&2 echo 'Image created at ./ev3-source.img.gz'
+TMPDIR=$(mktemp -d)
+
+TARFILE="$TMPDIR/ev3-source.tar"
+IMGFILE="$TMPDIR/ev3-source.img"
+
+sh ./brickstrap.sh create-tar ev3-source "$TARFILE" || exit 1
+BRICKSTRAP_IMAGE_FILE_SIZE=$(echo $(($(du -m "$TARFILE" | cut -f1)*5/4)) | cut -d. -f1)M
+echo 'Using BRICKSTRAP_IMAGE_FILE_SIZE='$BRICKSTRAP_IMAGE_FILE_SIZE
+sh ./brickstrap.sh create-image "$TARFILE" "$IMGFILE" || exit 1
+pushd "$TMPDIR"
+zip -v9 ev3-source.img.zip ev3-source.img
+popd
+cp "$TMPDIR/ev3-source.img.zip" .
+rm -rf "$TMPDIR"
+>&2 echo 'Image created at ./ev3-source.img.zip'
