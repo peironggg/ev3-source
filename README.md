@@ -14,6 +14,8 @@ Make sure you have all the dependencies installed:
 
 Then run `build.sh`, and you should get a `ev3-source.img.gz`. The file can be decompressed and written to an SD card.
 
+You can also run `docker-run.sh` to enter a shell in the image's environment.
+
 (If you are distributing it, you might want to zip it instead, so it's easier for students on Windows to use.)
 
 ## Manual instructions
