@@ -1,0 +1,10 @@
+language: node_js
+
+install: ./.travis_install.sh
+script: ./.travis_build.sh
+
+addons:
+  apt:
+    packages:
+    - libguestfs-tools
+    - qemu-user-static
