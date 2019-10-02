@@ -278,7 +278,8 @@ For macOS users, we recommend [Etcher](https://etcher.io/). Otherwise, refer to 
     `~/Downloads/` and our SD card is `/dev/sdb`. Adjust these values as
     needed. This will take a while.
 
-        $ sudo dd if=~/Downloads/ev3-source.img of=/dev/sdb bs=4M oflag=direct status=progress
+        $ sudo dd if=~/Downloads/ev3-source.img of=/dev/sdb bs=4M \
+              oflag=direct status=progress
         [sudo] password for user:
 
 5.  When copying the image file has completed, run
