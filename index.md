@@ -25,7 +25,7 @@ Only one robot kit will be loaned to each group. Each robot kit consists of two 
 On Thursday, 3 Oct 2019, instead of Reflection sessions, you will get started on robotics:
 
 * Form a Telegram robot group for your robot team and include your Avenger in the group.
-* Pick up the kit tomorrow between 10am and 5pm from the Fabrication Lab in COM2-04-23 (Level 4).
+* Pick up the kit between 10am and 5pm (on 3 Oct 2019) from the Fabrication Lab in COM2-04-23 (Level 4).
 * Follow the instructions below to get your robot to move.
 * Post evidence in your Telegram robot group to get Reflection attendance taken by your Avenger. There is no Reflection session meeting on 3 Oct 2019. You can meet your robot team anywhere, including in cyberspace.
 
@@ -250,7 +250,7 @@ For macOS users, we recommend [Etcher](https://etcher.io/). Otherwise, refer to 
         none            7.9G  1.5M  7.9G   1% /run/shm
         none            100M  3.7M   97M   4% /run/user
 
-2.  Now insert you SD card and run `df` again. See the new entry (`/dev/sdb1`)?
+2.  Now insert your SD card and run `df` again. See the new entry (`/dev/sdb1`)?
     That is your SD card. `sdb` is the actual device name and `1` is the
     partition number. Your actual device may be named something different.
 
