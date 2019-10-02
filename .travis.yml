@@ -3,6 +3,8 @@ language: node_js
 node_js:
   - 12
 
+if: tag IS present
+
 install: ./.travis_install.sh
 script: ./.travis_build.sh
 
@@ -17,3 +19,9 @@ addons:
     - libguestfs-tools
     - qemu-user-static
     - qemu-kvm
+
+deploy:
+  provider: releases
+  file: ev3-source.img.zip
+  on:
+    tags: true
