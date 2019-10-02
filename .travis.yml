@@ -21,6 +21,7 @@ addons:
     - qemu-kvm
 
 deploy:
+  edge: true
   provider: releases
   file: ev3-source.img.zip
   on:
