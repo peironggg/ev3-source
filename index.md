@@ -106,7 +106,7 @@ Alternatively, you can just use `nano` or `vim` via SSH on the EV3 itself. Be su
 
 To run a program that you have written, execute
 
-```
+```bash
 # (via SSH, on the EV3)
 $ source3 myprogram.js
 ```
