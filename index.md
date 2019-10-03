@@ -96,7 +96,8 @@ For macOS users, if you are running El Capitan (OS X 10.11) or higher, you might
 You can write your programs on your computer and then transfer them to the EV3 by
 
 ```bash
-scp myprogram.js robot@ev3dev.local
+# (on your local computer)
+$ scp myprogram.js robot@ev3dev.local
 ```
 
 You can also use other SCP clients like [WinSCP](https://winscp.net/eng/download.php).
@@ -106,7 +107,8 @@ Alternatively, you can just use `nano` or `vim` via SSH on the EV3 itself. Be su
 To run a program that you have written, execute
 
 ```
-source3 myprogram.js
+# (via SSH, on the EV3)
+$ source3 myprogram.js
 ```
 
 It may take about 10 seconds to load each time you execute the program.
