@@ -67,7 +67,7 @@ To program on the EV3, we will be using the SSH protocol to remotely access the 
 
 The EV3 can be connected via a Bluetooth or wired connection. However, we have had most success on the **wired connection** and we highly recommend connecting via the USB wire provided in your kit.
 
-To connect to your EV3 via the USB wire provided, you can follow the instructions from [here](https://www.ev3dev.org/docs/tutorials/connecting-to-the-internet-via-usb/).
+To connect to your EV3 via the USB wire provided, you can follow the instructions from [here](https://www.ev3dev.org/docs/tutorials/connecting-to-the-internet-via-usb/). If this does not work, try [this alternative method](#appendix-alternative-tethering-method).
 
 After that, you can SSH to your EV3 by
 
@@ -293,3 +293,19 @@ For macOS users, we recommend [Etcher](https://etcher.io/). Otherwise, refer to 
     it is safe to remove the SD card.
 
 Adapted from [the ev3dev website](https://www.ev3dev.org/docs/tutorials/writing-sd-card-image-linux-command-line/).
+
+## Appendix: Alternative tethering method
+
+1.  Enable gadget tethering on the EV3:
+
+    ![](1.png)
+
+    ![](2.png)
+
+    ![](3.png)
+
+2.  Go to the "Network Info" page to find the IP address.
+
+    ![](4.png)
+
+    ![](5.png)
