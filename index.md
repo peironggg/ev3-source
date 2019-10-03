@@ -97,7 +97,8 @@ You can write your programs on your computer and then transfer them to the EV3 b
 
 ```bash
 # (on your local computer)
-$ scp myprogram.js robot@ev3dev.local
+# (note, the colon at the end is required)
+$ scp myprogram.js robot@ev3dev.local:
 ```
 
 You can also use other SCP clients like [WinSCP](https://winscp.net/eng/download.php).
