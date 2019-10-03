@@ -157,7 +157,7 @@ Motors:
 - `ev3_motorD()`: returns the motor connected to the port D.
 - `ev3_runForDistance(motor, rotations, speed)`: causes the motor (which you get from the previous functions) to rotate at the specified speed for a specific number of rotations; if you pass a negative number of rotations, the motor will rotate backward. The speed is measured in tacho counts per second.
 - `ev3_runForTime(motor, time, speed)`: causes the motor (which you get from the previous functions) to rotate at the specified speed for a specific duration (in milliseconds). The speed is measured in tacho counts per second.
-- `ev3_stop(motor)`: cause the motor (which you get from the previous functions) to stop rotating.
+- `ev3_stop(motor)`: causes the motor (which you get from the previous functions) to stop rotating.
 
 Note: `ev3_runForDistance` and `ev3_runForTime` work by sending instructions to the motors. They will return almost immediately, without waiting for the motor to actually run for the specified time or distance. If you wish to wait, use `ev3_pause`, documented below.
 
@@ -167,7 +167,7 @@ Color sensor
 - `ev3_colorSensorRed(colorSensor)`: returns the red value read from the `colorSensor` which is a number within the range of 0 to 1020.
 - `ev3_colorSensorGreen(colorSensor)`: returns the green value read from the `colorSensor` which is a number within the range of 0 to 1020.
 - `ev3_colorSensorBlue(colorSensor)`: returns the blue value read from the `colorSensor` which is a number within the range of 0 to 1020.
-- `ev3_reflectedLightIntensity(colorSensor)`: return the percentage of the reflected light intensity.
+- `ev3_reflectedLightIntensity(colorSensor)`: returns the percentage of the reflected light intensity.
 
 Touch sensor
 
@@ -183,12 +183,13 @@ Ultrasonic sensor
 Gyro sensor
 
 - `ev3_gyroSensor()`: returns the connected gyro sensor.
-- `ev3_gyroSensorRate(gyroSensor)`: Returns the value of the gyro sensor.
+- `ev3_gyroSensorRate(gyroSensor)`: returns the value of the gyro sensor.
 
 Miscellaneous
 
-- `ev3_pause(time)`: Pauses the program for a specified amount of time in milliseconds.
+- `ev3_pause(time)`: pauses the program for a specified amount of time in milliseconds.
 - `ev3_runUntil(terminatingCondition, task)`: repeatedly executes `task()` until `terminatingCondition()` is satisfied; note that both of the two arguments are **functions**.
+- `ev3_connected(object)`: returns `true` if the sensor or motor is connected.
 
 Part of the fun is learning how to troubleshoot. If you have difficulties, start by googling your problems. For debugging, you can use the `display` function in your programs. The output of `display` will then appear on your screen.
 
@@ -296,6 +297,8 @@ Adapted from [the ev3dev website](https://www.ev3dev.org/docs/tutorials/writing-
 
 ## Appendix: Alternative tethering method
 
+1.  Connect to the EV3 by USB.
+
 1.  Enable gadget tethering on the EV3:
 
     ![](1.png)
@@ -304,8 +307,10 @@ Adapted from [the ev3dev website](https://www.ev3dev.org/docs/tutorials/writing-
 
     ![](3.png)
 
-2.  Go to the "Network Info" page to find the IP address.
+1.  Go to the "Network Info" page to find the IP address.
 
     ![](4.png)
 
     ![](5.png)
+
+1.  You should be able to connect using that address, or possibly `ev3dev.local` as well.
