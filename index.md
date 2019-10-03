@@ -39,11 +39,11 @@ For the mission, it must be a robot that your group has built. Sharing of the sa
 
 #### Installing the ev3dev image
 
-Download the Source Academy's customised ev3dev image from [here](https://github.com/source-academy/ev3-source/releases/download/v0a/ev3-source.img.zip). Then, use an image burner of your choice to install the image onto the microSD card issued. You will require a microSD card reader for this. The instructions for each operating system are as follows:
+Download the [Source Academy's customised ev3dev image from here](https://github.com/source-academy/ev3-source/releases/download/v0a/ev3-source.img.zip). Then, use an image burner of your choice to install the image onto the microSD card issued. You will require a microSD card reader for this. The instructions for each operating system are as follows:
 
 ##### Cross-platform
 
-Follow [this section &#40;"Flash the SD card"&#41; on the ev3dev site](https://www.ev3dev.org/docs/getting-started/#step-2-flash-the-sd-card).
+Follow [this section &#40;"Flash the SD card"&#41; on the ev3dev site](https://www.ev3dev.org/docs/getting-started/#step-2-flash-the-sd-card). **Note: download the [customised EV3-Source image](https://github.com/source-academy/ev3-source/releases/download/v0a/ev3-source.img.zip), not the ev3dev release image.**
 
 If this does not work, try our [alternative instructions at the end of the page](#appendix-alternative-flashing-instructions).
 
