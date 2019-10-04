@@ -122,13 +122,8 @@ It may take about 10 seconds to load each time you execute the program.
 const motorA = ev3_motorA();
 const motorB = ev3_motorB();
 
-if (ev3_connected(motorA)) {
-    display("CONNECTED");
-}
-
-if (ev3_connected(motorB)) {
-    display("CONNECTED B");
-}
+display(ev3_connected(motorA) ? "A connected" : "A not connected");
+display(ev3_connected(motorB) ? "B connected" : "B not connected");
 
 ev3_runForDistance(motorA, 3000, 100);
 ev3_runForDistance(motorB, -2000, 100);
