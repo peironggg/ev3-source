@@ -43,7 +43,7 @@ Download the [Source Academy's customised ev3dev image from here](https://github
 
 ##### Cross-platform
 
-Follow [this section &#40;"Flash the SD card"&#41; on the ev3dev site](https://www.ev3dev.org/docs/getting-started/#step-2-flash-the-sd-card). **Note: download the [customised EV3-Source image](https://github.com/source-academy/ev3-source/releases/download/v0a/ev3-source.img.zip), not the ev3dev release image.**
+Follow [this section &#40;"Flash the SD card"&#41; on the ev3dev site](https://www.ev3dev.org/docs/getting-started/#step-2-flash-the-sd-card). **Note: download the [customised EV3-Source image](https://github.com/source-academy/ev3-source/releases/download/v0b/ev3-source.img.zip), not the ev3dev release image.**
 
 Explorer/Finder may say that it is unable to read the card, or the card needs to be formatted. That is normal; just dismiss the message. Etcher will be able to flash the card.
 
