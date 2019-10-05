@@ -52,6 +52,10 @@ require('/usr/local/lib/node_modules/ev3_source.js');
             if (e instanceof SyntaxError) {
                 // jison returned invalid JS
                 // let's use Bison
+                console.error("Jison produced invalid output; please send this output to your Avenger!");
+                console.error(source_in);
+                console.error("Jison produced invalid output; please send this output to your Avenger!");
+                console.error("SyntaxError parsing Jison result: " + e.message);
             } else {
                 throw e;
             }
@@ -59,7 +63,7 @@ require('/usr/local/lib/node_modules/ev3_source.js');
 
         if (result === undefined) {
             console.error("Warning: using Babel; this may take a while.");
-            console.error("Please let your Avenger know if you see this message!");
+            console.error("Please send a copy of your current program to your Avenger if you see this message!");
             var babel = require('/usr/local/lib/node_modules/babel-transpiler.js');
             transformed = babel.transform(source_in);
             result = new Function(transformed);
