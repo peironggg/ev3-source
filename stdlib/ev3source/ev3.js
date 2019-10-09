@@ -426,6 +426,7 @@ exports.runUntil = function(terminateCondition, task) {
 };
 
 var exec = require('child_process').exec;
+var execFile = require('child_process').execFile;
 
 /**
  * Causes the robot to emit a sequence of beeps.
@@ -442,13 +443,19 @@ exports.playSequence = function(beeps) {
     return;
   }
 
+  var args = ["-f", beeps[0].toString(),
+              "-l", beeps[1].toString(),
+              "-D", beeps[2].toString()];
   for (var i = 0; i + 2 < beeps.length; i += 3) {
-    var acc = "beep ";
-    acc += " -f " + beeps[i].toString() +
-           " -l " + beeps[i + 1].toString() +
-           " -D " + beeps[i + 2].toString();
-    exec(acc);
+    args.push("-n");
+    args.push("-f");
+    args.push(beeps[i].toString());
+    args.push("-l");
+    args.push(beeps[i + 1].toString());
+    args.push("-D");
+    args.push(beeps[i + 2].toString());
   }
+  execFile("beep", args);
 };
 
 /**
@@ -458,7 +465,7 @@ exports.playSequence = function(beeps) {
  * @alias ev3_speak
  */
 exports.speak = function(script) {
-  exec("espeak \"" + script + "\" --stdout | aplay");
+  exec("espeak --stdin --stdout <<'EOF' | aplay\n" + script + "\nEOF\n");
 };
 
 var fs = require('fs');
