@@ -5,6 +5,8 @@ if [ ! -e brickstrap.sh ]; then
     exit 1
 fi
 
+mkdir -p node_modules
+
 pushd sourcetoes5/jison
 yarn install && yarn jison parser.jison || exit 1
 popd
