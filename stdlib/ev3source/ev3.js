@@ -1,4 +1,4 @@
-var ev3dev = require('ev3dev-lang');
+var ev3dev = require('../ev3dev-lang/bin/index.js');
 
 
 /**

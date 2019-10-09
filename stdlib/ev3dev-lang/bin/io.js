@@ -8,7 +8,7 @@ var fs = require('fs');
 var path = require('path');
 var Promise = null;
 try {
-    Promise = require('bluebird');
+    // Promise = require('bluebird');
 }
 catch (e) {
 }
