@@ -44,7 +44,7 @@ require('/usr/local/lib/node_modules/stdlib.js');
         var transformed = undefined;
         var source_in = fs.readFileSync(source_fn, { encoding: 'utf8' });
 
-        var parser = require('/usr/local/lib/node_modules/jison_parser.js');
+        var parser = require('/usr/local/lib/node_modules/jison-transpiler.js');
         transformed = parser.parse(source_in);
         try {
             result = new Function(transformed);
