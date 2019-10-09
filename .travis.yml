@@ -11,7 +11,9 @@ script: ./.travis_build.sh
 cache:
   directories:
    - babel-transpiler/node_modules
+   - estree-transpiler/node_modules
    - sourcetoes5/node_modules
+   - sourcetoes5/jison/node_modules
 
 addons:
   apt:
