@@ -1,6 +1,5 @@
 var ev3dev = require('../ev3dev-lang/bin/index.js');
 
-
 /**
  * Hello world!
  *
@@ -24,7 +23,7 @@ exports.connected = function(obj) {
 /**
  * Gets the motor connected to port A.
  *
- * @returns {peripheral} The motor connected to port A.
+ * @returns {peripheral} The motor connected to port A
  * @alias ev3_motorA
  */
 exports.motorA = function() {
@@ -35,7 +34,7 @@ exports.motorA = function() {
 /**
  * Gets the motor connected to port B.
  *
- * @returns {peripheral} The motor connected to port B.
+ * @returns {peripheral} The motor connected to port B
  * @alias ev3_motorB
  */
 exports.motorB = function() {
@@ -46,7 +45,7 @@ exports.motorB = function() {
 /**
  * Gets the motor connected to port C.
  *
- * @returns {peripheral} The motor connected to port C.
+ * @returns {peripheral} The motor connected to port C
  * @alias ev3_motorC
  */
 exports.motorC = function() {
@@ -57,7 +56,7 @@ exports.motorC = function() {
 /**
  * Gets the motor connected to port D.
  *
- * @returns {peripheral} The motor connected to port D.
+ * @returns {peripheral} The motor connected to port D
  * @alias ev3_motorD
  */
 exports.motorD = function() {
@@ -71,8 +70,8 @@ exports.motorD = function() {
  * Note: this works by sending instructions to the motors. This will return almost immediately, without waiting for the motor to actually run for the specified distance. If you wish to wait, use {@link ev3_pause}.
  *
  * @param {peripheral} motor - The motor
- * @param {number} rotations - The number of rotations to turn, in motor-specific units
- * @param {number} speed - The speed to run at, in motor-specific units
+ * @param {number} rotations - The number of rotations to turn, in pulses of the rotary encoder
+ * @param {number} speed - The speed to run at, in tacho counts per second
  * @alias ev3_runForDistance
  */
 exports.runForDistance = function(motor, rotations, speed) {
@@ -82,11 +81,11 @@ exports.runForDistance = function(motor, rotations, speed) {
 /**
  * Causes the motor to rotate for a specified duration at the specified speed.
  *
-* Note: this works by sending instructions to the motors. This will return almost immediately, without waiting for the motor to actually run for the specified duration. If you wish to wait, use {@link ev3_pause}.
+ * Note: this works by sending instructions to the motors. This will return almost immediately, without waiting for the motor to actually run for the specified duration. If you wish to wait, use {@link ev3_pause}.
  *
- * @param {peripheral} - The motor
- * @param {number} - The duration to turn, in milliseconds
- * @param {number} - The speed to run at, in motor-specific units
+ * @param {peripheral} motor - The motor
+ * @param {number} time - The duration to turn, in milliseconds
+ * @param {number} speed - The speed to run at, in tacho counts per second
  * @alias ev3_runForTime
  */
 exports.runForTime = function(motor, time, speed) {
@@ -94,14 +93,114 @@ exports.runForTime = function(motor, time, speed) {
 };
 
 /**
- * Causes the motor to stop.
+ * Causes the motor to rotate to the given absolute position (as reported by
+ * {@link ev3_motorGetPosition}) with the given speed.
+ *
+ * Note: this works by sending instructions to the motors. This will return almost immediately, without waiting for the motor to reach the given absolute position. If you wish to wait, use {@link ev3_pause}.
+ *
+ * @param {peripheral} motor - The motor
+ * @param {number} position - The absolute position to turn to
+ * @param {number} speed - The speed to run at, in tacho counts per second
+ * @alias ev3_runToAbsolutePosition
+ */
+exports.runToAbsolutePosition = function(motor, position, speed) {
+  motor.runToAbsolutePosition(position, speed);
+};
+
+/**
+ * Causes the motor to rotate until the position reaches <code>{@link ev3_motorGetPosition}()
+ *  + position</code> with the given speed.
+ *
+ * Note: this works by sending instructions to the motors. This will return almost immediately, without waiting for the motor to reach the given absolute position. If you wish to wait, use {@link ev3_pause}.
+ *
+ * @param {peripheral} motor - The motor
+ * @param {number} position - The amount to turn
+ * @param {number} speed - The speed to run at, in tacho counts per second
+ * @alias ev3_runToRelativePosition
+ */
+exports.runToRelativePosition = function(motor, position, speed) {
+  motor.runToRelativePosition(position, speed);
+};
+
+/**
+ * Gets the motor's current position, in pulses of the rotary encoder.
+ *
+ * @param {peripheral} motor - The motor
+ * @returns {number} The current position.
+ * @alias ev3_motorGetPosition
+ */
+exports.motorGetPosition = function(motor) {
+  return motor.position;
+}
+
+/**
+ * Gets the motor's current speed, in tacho counts per second.
+ *
+ * @param {peripheral} motor - The motor
+ * @returns {number} The current speed.
+ * @alias ev3_motorGetSpeed
+ */
+exports.motorGetSpeed = function(motor) {
+  return motor.speed;
+}
+
+/**
+ * Sets the speed the motor will run at the next time {@link ev3_motorStart}
+ * is called.
+ *
+ * @param {peripheral} motor - The motor
+ * @param {number} speed - The speed to run at, in tacho counts per second
+ * @alias ev3_motorSetSpeed
+ */
+exports.motorSetSpeed = function(motor, speed) {
+  motor.speedSp = speed;
+}
+
+/**
+ * Causes the motor to start with the previously set speed and stop action
+ * (see {@link motorSetSpeed} and {@link motorSetStopAction}).
+ *
+ * @param {peripheral} motor - The motor
+ * @alias ev3_motorStart
+ */
+exports.motorStart = function(motor) {
+  motor.start();
+};
+
+/**
+ * Causes the motor to stop using the previously set stop action.
+ *
+ * @param {peripheral} motor - The motor
+ * @alias ev3_motorStop
+ */
+exports.motorStop = function(motor) {
+  motor.stop();
+};
+
+/**
+ * Sets the stop action of the motor.
+ *
+ * Possible stop actions are:
+ *
+ * <ul><li><code>"coast"</code>: power will be removed from the motor and it will freely coast to a stop.</li>
+ * <li><code>"brake"</code>: power will be removed from the motor and a passive electrical load will be placed on the motor. This load will absorb the energy from the rotation of the motors and cause the motor to stop more quickly than coasting.</li>
+ * <li><code>"hold"</code>: actively try to hold the motor at the current position. If an external force tries to turn the motor, the motor will ‘push back’ to maintain its position.</li></ul>
+ *
+ * @param {peripheral} motor - The motor
+ * @param {string} stopAction - The stop action to use
+ * @alias ev3_motorSetStopAction
+ */
+exports.motorSetStopAction = function(motor, stopAction) {
+  motor.setStopAction(stopAction);
+}
+
+/**
+ * Causes the motor to stop using the previously set stop action.
  *
  * @param {peripheral} motor - The motor
  * @alias ev3_stop
  */
-exports.stop = function(motor) {
-  motor.stop();
-};
+exports.stop = exports.motorStop;
 
 /**
  * Gets the colour sensor connected any of ports 1, 2, 3 or 4.
@@ -192,6 +291,28 @@ exports.touchSensor2 = function() {
 };
 
 /**
+ * Gets the touch sensor connected to port 3.
+ *
+ * @returns {peripheral} The touch sensor.
+ * @alias ev3_touchSensor3
+ */
+exports.touchSensor3 = function() {
+  var touchSensor = new ev3dev.TouchSensor(ev3dev.INPUT_3);
+  return touchSensor;
+};
+
+/**
+ * Gets the touch sensor connected to port 4.
+ *
+ * @returns {peripheral} The touch sensor.
+ * @alias ev3_touchSensor4
+ */
+exports.touchSensor4 = function() {
+  var touchSensor = new ev3dev.TouchSensor(ev3dev.INPUT_4);
+  return touchSensor;
+};
+
+/**
  * Gets whether the touch sensor is pressed.
  *
  * @param {peripheral} touchSensor - The touch sensor.
@@ -247,8 +368,9 @@ exports.gyroSensorRate = function(gyroSensor) {
 };
 
 /**
- * Gets the absolute angle detected by the gyro sensor, relative to
- * a fixed but undefined starting point.
+ * Gets the absolute angle detected by the gyro sensor, measured from when
+ * the sensor was last switched to angle mode either by this method or by
+ * {@link ev3_gyroSensorAngleMode}.
  *
  * @param {peripheral} gyroSensor - The gyro sensor.
  * @returns {number} The angle, in degrees.
@@ -256,6 +378,27 @@ exports.gyroSensorRate = function(gyroSensor) {
  */
 exports.gyroSensorAngle = function(gyroSensor) {
   return gyroSensor.angle;
+};
+
+/**
+ * Sets the gyro sensor to rate mode.
+ *
+ * @param {peripheral} gyroSensor - The gyro sensor.
+ * @alias ev3_gyroSensorRateMode
+ */
+exports.gyroSensorRateMode = function(gyroSensor) {
+  gyroSensor.mode = "GYRO-RATE";
+};
+
+/**
+ * Sets the gyro sensor to angle mode. Angles reported will be relative to the position
+ * the sensor was in when the sensor was last switched to angle mode.
+ *
+ * @param {peripheral} gyroSensor - The gyro sensor.
+ * @alias gyroSensorAngleMode
+ */
+exports.gyroSensorAngleMode = function(gyroSensor) {
+  gyroSensor.mode = "GYRO-ANG";
 };
 
 /**
@@ -280,4 +423,121 @@ exports.runUntil = function(terminateCondition, task) {
   while (!terminateCondition()) {
     task();
   }
+};
+
+var exec = require('child_process').exec;
+
+/**
+ * Causes the robot to emit a sequence of beeps.
+ *
+ * The beep sequence is an array of <code>[frequency, length (ms), delay (ms), ...]</code>.
+ * For example, <code>[1000, 500, 500, 250, 500, 0]</code> would cause the robot
+ * to emit a 1000 Hz beep for 500 ms, wait 500 ms, then emit a 250 Hz beep for 500 ms.
+ *
+ * @param {Array} beeps - The beep sequence.
+ * @alias ev3_playSequence
+ */
+exports.playSequence = function(beeps) {
+  if (beeps.length < 3) {
+    return;
+  }
+
+  var acc = "beep ";
+  for (var i = 0; i + 2 < beeps.length; i += 3) {
+    acc += " -f " + beeps[i].toString() +
+           " -l " + beeps[i + 1].toString() +
+           " -D " + beeps[i + 2].toString();
+  }
+  exec(acc);
+};
+
+/**
+ * Causes the robot to speak.
+ *
+ * @param {string} script - The text to speak.
+ * @alias ev3_speak
+ */
+exports.speak = function(script) {
+  exec("espeak \"" + script + "\" --stdout | aplay");
+};
+
+var fs = require('fs');
+var inputFile = fs.openSync("/dev/input/by-path/platform-gpio-keys.0-event", "r");
+var buffer = new Buffer(16);
+var lastButton;
+var KEY_UP = 103
+var KEY_DOWN = 108
+var KEY_LEFT = 105
+var KEY_RIGHT = 106
+var KEY_ENTER = 28
+
+/**
+ * Waits until a button on the robot is pressed.
+ *
+ * The button that is pressed can be checked by {@link ev3_buttonEnterPressed},
+ * {@link ev3_buttonUpPressed}, {@link ev3_buttonDownPressed}, {@link ev3_buttonLeftPressed}
+ * and {@link ev3_buttonRightPressed}.
+ *
+ * @alias ev3_waitForButtonPress
+ */
+exports.waitForButtonPress = function() {
+  var type, code, value;
+  while (!((type == 1) && (value == 0))) {
+    fs.readSync(inputFile, buffer, 0, 16, null);
+    type = buffer.readUInt16LE(8);
+    code = buffer.readUInt16LE(10);
+    value = buffer.readUInt32LE(12);
+  }
+  lastButton = code;
+};
+
+
+/**
+ * Checks if the button that released the last {@link ev3_waitForButtonPress}
+ * was the enter (middle) button.
+ *
+ * @returns {boolean}
+ */
+exports.buttonEnterPressed = function() {
+  return lastButton == KEY_ENTER;
+};
+
+/**
+ * Checks if the button that released the last {@link ev3_waitForButtonPress}
+ * was the up button.
+ *
+ * @returns {boolean}
+ */
+exports.buttonUpPressed = function() {
+  return lastButton == KEY_UP;
+};
+
+/**
+ * Checks if the button that released the last {@link ev3_waitForButtonPress}
+ * was the down button.
+ *
+ * @returns {boolean}
+ */
+exports.buttonDownPressed = function() {
+  return lastButton == KEY_DOWN;
+};
+
+/**
+ * Checks if the button that released the last {@link ev3_waitForButtonPress}
+ * was the left button.
+ *
+ * @returns {boolean}
+ */
+exports.buttonLeftPressed = function() {
+  return lastButton == KEY_LEFT;
+};
+
+/**
+ * Checks if the button that released the last {@link ev3_waitForButtonPress}
+ * was the right button.
+ *
+ * @returns {boolean}
+ */
+exports.buttonRightPressed = function() {
+  return lastButton == KEY_RIGHT;
 };
