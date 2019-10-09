@@ -395,7 +395,7 @@ exports.gyroSensorRateMode = function(gyroSensor) {
  * the sensor was in when the sensor was last switched to angle mode.
  *
  * @param {peripheral} gyroSensor - The gyro sensor.
- * @alias gyroSensorAngleMode
+ * @alias ev3_gyroSensorAngleMode
  */
 exports.gyroSensorAngleMode = function(gyroSensor) {
   gyroSensor.mode = "GYRO-ANG";
@@ -504,6 +504,7 @@ exports.waitForButtonPress = function() {
  * was the enter (middle) button.
  *
  * @returns {boolean}
+ * @alias ev3_buttonEnterPressed
  */
 exports.buttonEnterPressed = function() {
   return lastButton == KEY_ENTER;
@@ -514,6 +515,7 @@ exports.buttonEnterPressed = function() {
  * was the up button.
  *
  * @returns {boolean}
+ * @alias ev3_buttonUpPressed
  */
 exports.buttonUpPressed = function() {
   return lastButton == KEY_UP;
@@ -524,6 +526,7 @@ exports.buttonUpPressed = function() {
  * was the down button.
  *
  * @returns {boolean}
+ * @alias ev3_buttonDownPressed
  */
 exports.buttonDownPressed = function() {
   return lastButton == KEY_DOWN;
@@ -534,6 +537,7 @@ exports.buttonDownPressed = function() {
  * was the left button.
  *
  * @returns {boolean}
+ * @alias ev3_buttonLeftPressed
  */
 exports.buttonLeftPressed = function() {
   return lastButton == KEY_LEFT;
@@ -544,6 +548,7 @@ exports.buttonLeftPressed = function() {
  * was the right button.
  *
  * @returns {boolean}
+ * @alias ev3_buttonRightPressed
  */
 exports.buttonRightPressed = function() {
   return lastButton == KEY_RIGHT;
