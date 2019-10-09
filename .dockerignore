@@ -1,6 +1,7 @@
 babel-transpiler
 estree-transpiler
 sourcetoes5
-node_modules/ev3source/array.spec.js
+stdlib
 *.zip
 *.img
+ev3-source-update.sh
