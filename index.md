@@ -1,5 +1,13 @@
 Welcome to the world of LEGO Mindstorms EV3! Work together with your teammates to create the best robot and impress everyone.
 
+## Quick links
+
+### [EV3 library](https://source-academy.github.io/ev3-source/jsdoc/)
+
+### [Latest EV3-Source image][latest-img]
+
+### [Latest EV3-Source updater][latest-update]
+
 ## Preliminaries
 
 This mission will be done in groups of 3 or 4 students (depending on the size of your Studio group). Only one person needs to submit the group's programs on the Source Academy, with their group name and members written in a comment at the top of the submission. Other members should submit their group name and members only, but need not submit their programs.
@@ -39,11 +47,11 @@ For the mission, it must be a robot that your group has built. Sharing of the sa
 
 #### Installing the ev3dev image
 
-Download the [Source Academy's customised ev3dev image from here](https://github.com/source-academy/ev3-source/releases/download/v0b/ev3-source.img.zip). Then, use an image burner of your choice to install the image onto the microSD card issued. You will require a microSD card reader for this. The instructions for each operating system are as follows:
+Download the [Source Academy's customised ev3dev image from here][latest-img]. Then, use an image burner of your choice to install the image onto the microSD card issued. You will require a microSD card reader for this. The instructions for each operating system are as follows:
 
 ##### Cross-platform
 
-Follow [this section &#40;"Flash the SD card"&#41; on the ev3dev site](https://www.ev3dev.org/docs/getting-started/#step-2-flash-the-sd-card). **Note: download the [customised EV3-Source image](https://github.com/source-academy/ev3-source/releases/download/v0b/ev3-source.img.zip), not the ev3dev release image.**
+Follow [this section &#40;"Flash the SD card"&#41; on the ev3dev site](https://www.ev3dev.org/docs/getting-started/#step-2-flash-the-sd-card). **Note: download the [customised EV3-Source image][latest-img], not the ev3dev release image.**
 
 Explorer/Finder may say that it is unable to read the card, or the card needs to be formatted. That is normal; just dismiss the message. Etcher will be able to flash the card.
 
@@ -144,9 +152,9 @@ if (ev3_reflectedLightIntensity(color) > 20) {
 
 ### Source language
 
-The language for this mission is Source §3 (including the list, streams and arrays library), plus the special [EV3 library](jsdoc/).
+The language for this mission is Source §3 (including the list, streams and arrays library), plus the special [EV3 library](https://source-academy.github.io/ev3-source/jsdoc/).
 
-[You can view the documentation for the EV3 library here.](jsdoc/)
+[You can view the documentation for the EV3 library here.](https://source-academy.github.io/ev3-source/jsdoc/)
 
 Part of the fun is learning how to troubleshoot. If you have difficulties, start by googling your problems. For debugging, you can use the `display` function in your programs. The output of `display` will then appear on your screen.
 
@@ -271,3 +279,54 @@ Adapted from [the ev3dev website](https://www.ev3dev.org/docs/tutorials/writing-
     ![](5.png)
 
 1.  You should be able to connect using that address, or possibly `ev3dev.local` as well.
+
+## Appendix: Updating the Source libraries
+
+1.  Download the [updater ev3-source-update.sh][latest-update].
+
+1.  Transfer the file to your device using SCP or any other method.
+
+    ```bash
+    $ scp ev3-source-update.sh robot@ev3dev.local:
+    ```
+
+1.  SSH into the device and run the updater as shown below.
+
+    ```
+    $ ssh robot@ev3dev.local
+    robot@ev3dev.local's password:
+
+    robot@ev3dev:~$ sudo bash ./ev3-source-update.sh
+    [sudo] password for robot:
+    ```
+
+    (Key in the same password for sudo as you do for SSH. The default password is `maker`.)
+
+Done!
+
+Note that there may be some warnings about file times in the future. That is normal; do not worry.
+
+[latest-img]: https://github.com/source-academy/ev3-source/releases/download/v0c/ev3-source.img.zip
+[latest-update]: https://github.com/source-academy/ev3-source/releases/download/v0c/ev3-source-update.sh
+
+## Appendix: Making programs runnable via the brick's controls
+
+1.  Insert this line at the top of your program. **Note: there cannot be blank lines before this line. It has to be the FIRST line.**
+
+    ```
+    #!/usr/local/bin/source3
+    ```
+
+1.  Make your program file executable.
+
+    ```bash
+    $ chmod a+x hello.js
+    ```
+
+1.  On the robot screen, you can now go to the File Manager:
+
+    ![](exec1.png)
+
+1.  Notice that there is an asterisk `*` next to the file. You can press the middle button to run it; console (`display()`) output will be shown on the robot screen.
+
+    ![](exec2.png)

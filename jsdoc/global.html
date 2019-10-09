@@ -94,9 +94,734 @@
     
 
     
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id="ev3_stop"><span class="type-signature"></span>ev3_stop<span class="type-signature"></span></h4>
+
+
+
+
+<div class="description">
+    Causes the motor to stop using the previously set stop action.
+</div>
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+    
 
     
         <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="ev3_ambientLightIntensity"><span class="type-signature"></span>ev3_ambientLightIntensity<span class="signature">(colorSensor)</span><span class="type-signature"> &rarr; {number}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Gets the ambient light intensity seen by the colour sensor.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>colorSensor</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">peripheral</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The colour sensor.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    The ambient light intensity, as a percentage from 0 to 100.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">number</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="ev3_buttonDownPressed"><span class="type-signature"></span>ev3_buttonDownPressed<span class="signature">()</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Checks if the button that released the last <a href="global.html#ev3_waitForButtonPress">ev3_waitForButtonPress</a>
+was the down button.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="ev3_buttonEnterPressed"><span class="type-signature"></span>ev3_buttonEnterPressed<span class="signature">()</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Checks if the button that released the last <a href="global.html#ev3_waitForButtonPress">ev3_waitForButtonPress</a>
+was the enter (middle) button.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="ev3_buttonLeftPressed"><span class="type-signature"></span>ev3_buttonLeftPressed<span class="signature">()</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Checks if the button that released the last <a href="global.html#ev3_waitForButtonPress">ev3_waitForButtonPress</a>
+was the left button.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="ev3_buttonRightPressed"><span class="type-signature"></span>ev3_buttonRightPressed<span class="signature">()</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Checks if the button that released the last <a href="global.html#ev3_waitForButtonPress">ev3_waitForButtonPress</a>
+was the right button.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="ev3_buttonUpPressed"><span class="type-signature"></span>ev3_buttonUpPressed<span class="signature">()</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Checks if the button that released the last <a href="global.html#ev3_waitForButtonPress">ev3_waitForButtonPress</a>
+was the up button.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
 
         
             
@@ -930,6 +1655,295 @@
     
 
     
+    <h4 class="name" id="ev3_gyroSensorAngle"><span class="type-signature"></span>ev3_gyroSensorAngle<span class="signature">(gyroSensor)</span><span class="type-signature"> &rarr; {number}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Gets the absolute angle detected by the gyro sensor, measured from when
+the sensor was last switched to angle mode either by this method or by
+<a href="global.html#ev3_gyroSensorAngleMode">ev3_gyroSensorAngleMode</a>.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>gyroSensor</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">peripheral</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The gyro sensor.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    The angle, in degrees.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">number</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="ev3_gyroSensorAngleMode"><span class="type-signature"></span>ev3_gyroSensorAngleMode<span class="signature">(gyroSensor)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Sets the gyro sensor to angle mode. Angles reported will be relative to the position
+the sensor was in when the sensor was last switched to angle mode.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>gyroSensor</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">peripheral</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The gyro sensor.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
     <h4 class="name" id="ev3_gyroSensorRate"><span class="type-signature"></span>ev3_gyroSensorRate<span class="signature">(gyroSensor)</span><span class="type-signature"> &rarr; {number}</span></h4>
     
 
@@ -1073,6 +2087,138 @@
 </dl>
 
     
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="ev3_gyroSensorRateMode"><span class="type-signature"></span>ev3_gyroSensorRateMode<span class="signature">(gyroSensor)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Sets the gyro sensor to rate mode.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>gyroSensor</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">peripheral</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The gyro sensor.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1243,7 +2389,7 @@
 
         
 <div class="param-desc">
-    The motor connected to port A.
+    The motor connected to port A
 </div>
 
 
@@ -1348,7 +2494,7 @@
 
         
 <div class="param-desc">
-    The motor connected to port B.
+    The motor connected to port B
 </div>
 
 
@@ -1453,7 +2599,7 @@
 
         
 <div class="param-desc">
-    The motor connected to port C.
+    The motor connected to port C
 </div>
 
 
@@ -1558,7 +2704,7 @@
 
         
 <div class="param-desc">
-    The motor connected to port D.
+    The motor connected to port D
 </div>
 
 
@@ -1576,6 +2722,896 @@
 </dl>
 
     
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="ev3_motorGetPosition"><span class="type-signature"></span>ev3_motorGetPosition<span class="signature">(motor)</span><span class="type-signature"> &rarr; {number}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Gets the motor's current position, in pulses of the rotary encoder.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>motor</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">peripheral</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The motor</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    The current position.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">number</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="ev3_motorGetSpeed"><span class="type-signature"></span>ev3_motorGetSpeed<span class="signature">(motor)</span><span class="type-signature"> &rarr; {number}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Gets the motor's current speed, in tacho counts per second.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>motor</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">peripheral</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The motor</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    The current speed.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">number</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="ev3_motorSetSpeed"><span class="type-signature"></span>ev3_motorSetSpeed<span class="signature">(motor, speed)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Sets the speed the motor will run at the next time <a href="global.html#ev3_motorStart">ev3_motorStart</a>
+is called.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>motor</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">peripheral</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The motor</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>speed</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The speed to run at, in tacho counts per second</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="ev3_motorSetStopAction"><span class="type-signature"></span>ev3_motorSetStopAction<span class="signature">(motor, stopAction)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Sets the stop action of the motor.
+
+Possible stop actions are:
+
+<ul><li><code>"coast"</code>: power will be removed from the motor and it will freely coast to a stop.</li>
+<li><code>"brake"</code>: power will be removed from the motor and a passive electrical load will be placed on the motor. This load will absorb the energy from the rotation of the motors and cause the motor to stop more quickly than coasting.</li>
+<li><code>"hold"</code>: actively try to hold the motor at the current position. If an external force tries to turn the motor, the motor will ‘push back’ to maintain its position.</li></ul>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>motor</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">peripheral</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The motor</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>stopAction</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The stop action to use</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="ev3_motorStart"><span class="type-signature"></span>ev3_motorStart<span class="signature">(motor)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Causes the motor to start with the previously set speed and stop action
+(see motorSetSpeed and motorSetStopAction).
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>motor</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">peripheral</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The motor</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="ev3_motorStop"><span class="type-signature"></span>ev3_motorStop<span class="signature">(motor)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Causes the motor to stop using the previously set stop action.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>motor</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">peripheral</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The motor</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1648,6 +3684,142 @@
             
 
             <td class="description last">The time to wait, in milliseconds.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="ev3_playSequence"><span class="type-signature"></span>ev3_playSequence<span class="signature">(beeps)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Causes the robot to emit a sequence of beeps.
+
+The beep sequence is an array of <code>[frequency, length (ms), delay (ms), ...]</code>.
+For example, <code>[1000, 500, 500, 250, 500, 0]</code> would cause the robot
+to emit a 1000 Hz beep for 500 ms, wait 500 ms, then emit a 250 Hz beep for 500 ms.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>beeps</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The beep sequence.</td>
         </tr>
 
     
@@ -1958,7 +4130,7 @@ Note: this works by sending instructions to the motors. This will return almost 
 
             
 
-            <td class="description last">The number of rotations to turn, in motor-specific units</td>
+            <td class="description last">The number of rotations to turn, in pulses of the rotary encoder</td>
         </tr>
 
     
@@ -1981,7 +4153,7 @@ Note: this works by sending instructions to the motors. This will return almost 
 
             
 
-            <td class="description last">The speed to run at, in motor-specific units</td>
+            <td class="description last">The speed to run at, in tacho counts per second</td>
         </tr>
 
     
@@ -2161,7 +4333,369 @@ Note: this works by sending instructions to the motors. This will return almost 
 
             
 
-            <td class="description last">The speed to run at, in motor-specific units</td>
+            <td class="description last">The speed to run at, in tacho counts per second</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="ev3_runToAbsolutePosition"><span class="type-signature"></span>ev3_runToAbsolutePosition<span class="signature">(motor, position, speed)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Causes the motor to rotate to the given absolute position (as reported by
+<a href="global.html#ev3_motorGetPosition">ev3_motorGetPosition</a>) with the given speed.
+
+Note: this works by sending instructions to the motors. This will return almost immediately, without waiting for the motor to reach the given absolute position. If you wish to wait, use <a href="global.html#ev3_pause">ev3_pause</a>.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>motor</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">peripheral</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The motor</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>position</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The absolute position to turn to</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>speed</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The speed to run at, in tacho counts per second</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="ev3_runToRelativePosition"><span class="type-signature"></span>ev3_runToRelativePosition<span class="signature">(motor, position, speed)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Causes the motor to rotate until the position reaches <code><a href="global.html#ev3_motorGetPosition">ev3_motorGetPosition</a>()
+ + position</code> with the given speed.
+
+Note: this works by sending instructions to the motors. This will return almost immediately, without waiting for the motor to reach the given absolute position. If you wish to wait, use <a href="global.html#ev3_pause">ev3_pause</a>.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>motor</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">peripheral</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The motor</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>position</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The amount to turn</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>speed</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The speed to run at, in tacho counts per second</td>
         </tr>
 
     
@@ -2388,7 +4922,7 @@ Note: this works by sending instructions to the motors. This will return almost 
     
 
     
-    <h4 class="name" id="ev3_stop"><span class="type-signature"></span>ev3_stop<span class="signature">(motor)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="ev3_speak"><span class="type-signature"></span>ev3_speak<span class="signature">(script)</span><span class="type-signature"></span></h4>
     
 
     
@@ -2396,7 +4930,7 @@ Note: this works by sending instructions to the motors. This will return almost 
 
 
 <div class="description">
-    Causes the motor to stop.
+    Causes the robot to speak.
 </div>
 
 
@@ -2432,13 +4966,13 @@ Note: this works by sending instructions to the motors. This will return almost 
 
         <tr>
             
-                <td class="name"><code>motor</code></td>
+                <td class="name"><code>script</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">peripheral</span>
+<span class="param-type">string</span>
 
 
             
@@ -2448,7 +4982,7 @@ Note: this works by sending instructions to the motors. This will return almost 
 
             
 
-            <td class="description last">The motor</td>
+            <td class="description last">The text to speak.</td>
         </tr>
 
     
@@ -2634,6 +5168,216 @@ Note: this works by sending instructions to the motors. This will return almost 
 
 <div class="description">
     Gets the touch sensor connected to port 2.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    The touch sensor.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">peripheral</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="ev3_touchSensor3"><span class="type-signature"></span>ev3_touchSensor3<span class="signature">()</span><span class="type-signature"> &rarr; {peripheral}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Gets the touch sensor connected to port 3.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    The touch sensor.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">peripheral</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="ev3_touchSensor4"><span class="type-signature"></span>ev3_touchSensor4<span class="signature">()</span><span class="type-signature"> &rarr; {peripheral}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Gets the touch sensor connected to port 4.
 </div>
 
 
@@ -3138,6 +5882,93 @@ Note: this works by sending instructions to the motors. This will return almost 
 
 
         
+            
+
+    
+
+    
+    <h4 class="name" id="ev3_waitForButtonPress"><span class="type-signature"></span>ev3_waitForButtonPress<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Waits until a button on the robot is pressed.
+
+The button that is pressed can be checked by <a href="global.html#ev3_buttonEnterPressed">ev3_buttonEnterPressed</a>,
+<a href="global.html#ev3_buttonUpPressed">ev3_buttonUpPressed</a>, <a href="global.html#ev3_buttonDownPressed">ev3_buttonDownPressed</a>, <a href="global.html#ev3_buttonLeftPressed">ev3_buttonLeftPressed</a>
+and <a href="global.html#ev3_buttonRightPressed">ev3_buttonRightPressed</a>.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
     
 
     
@@ -3153,13 +5984,13 @@ Note: this works by sending instructions to the motors. This will return almost 
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#ev3_colorSensor">ev3_colorSensor</a></li><li><a href="global.html#ev3_colorSensorBlue">ev3_colorSensorBlue</a></li><li><a href="global.html#ev3_colorSensorGreen">ev3_colorSensorGreen</a></li><li><a href="global.html#ev3_colorSensorRed">ev3_colorSensorRed</a></li><li><a href="global.html#ev3_connected">ev3_connected</a></li><li><a href="global.html#ev3_gyroSensor">ev3_gyroSensor</a></li><li><a href="global.html#ev3_gyroSensorRate">ev3_gyroSensorRate</a></li><li><a href="global.html#ev3_hello">ev3_hello</a></li><li><a href="global.html#ev3_motorA">ev3_motorA</a></li><li><a href="global.html#ev3_motorB">ev3_motorB</a></li><li><a href="global.html#ev3_motorC">ev3_motorC</a></li><li><a href="global.html#ev3_motorD">ev3_motorD</a></li><li><a href="global.html#ev3_pause">ev3_pause</a></li><li><a href="global.html#ev3_reflectedLightIntensity">ev3_reflectedLightIntensity</a></li><li><a href="global.html#ev3_runForDistance">ev3_runForDistance</a></li><li><a href="global.html#ev3_runForTime">ev3_runForTime</a></li><li><a href="global.html#ev3_runUntil">ev3_runUntil</a></li><li><a href="global.html#ev3_stop">ev3_stop</a></li><li><a href="global.html#ev3_touchSensor1">ev3_touchSensor1</a></li><li><a href="global.html#ev3_touchSensor2">ev3_touchSensor2</a></li><li><a href="global.html#ev3_touchSensorPressed">ev3_touchSensorPressed</a></li><li><a href="global.html#ev3_ultrasonicSensor">ev3_ultrasonicSensor</a></li><li><a href="global.html#ev3_ultrasonicSensorDistance">ev3_ultrasonicSensorDistance</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#ev3_ambientLightIntensity">ev3_ambientLightIntensity</a></li><li><a href="global.html#ev3_buttonDownPressed">ev3_buttonDownPressed</a></li><li><a href="global.html#ev3_buttonEnterPressed">ev3_buttonEnterPressed</a></li><li><a href="global.html#ev3_buttonLeftPressed">ev3_buttonLeftPressed</a></li><li><a href="global.html#ev3_buttonRightPressed">ev3_buttonRightPressed</a></li><li><a href="global.html#ev3_buttonUpPressed">ev3_buttonUpPressed</a></li><li><a href="global.html#ev3_colorSensor">ev3_colorSensor</a></li><li><a href="global.html#ev3_colorSensorBlue">ev3_colorSensorBlue</a></li><li><a href="global.html#ev3_colorSensorGreen">ev3_colorSensorGreen</a></li><li><a href="global.html#ev3_colorSensorRed">ev3_colorSensorRed</a></li><li><a href="global.html#ev3_connected">ev3_connected</a></li><li><a href="global.html#ev3_gyroSensor">ev3_gyroSensor</a></li><li><a href="global.html#ev3_gyroSensorAngle">ev3_gyroSensorAngle</a></li><li><a href="global.html#ev3_gyroSensorAngleMode">ev3_gyroSensorAngleMode</a></li><li><a href="global.html#ev3_gyroSensorRate">ev3_gyroSensorRate</a></li><li><a href="global.html#ev3_gyroSensorRateMode">ev3_gyroSensorRateMode</a></li><li><a href="global.html#ev3_hello">ev3_hello</a></li><li><a href="global.html#ev3_motorA">ev3_motorA</a></li><li><a href="global.html#ev3_motorB">ev3_motorB</a></li><li><a href="global.html#ev3_motorC">ev3_motorC</a></li><li><a href="global.html#ev3_motorD">ev3_motorD</a></li><li><a href="global.html#ev3_motorGetPosition">ev3_motorGetPosition</a></li><li><a href="global.html#ev3_motorGetSpeed">ev3_motorGetSpeed</a></li><li><a href="global.html#ev3_motorSetSpeed">ev3_motorSetSpeed</a></li><li><a href="global.html#ev3_motorSetStopAction">ev3_motorSetStopAction</a></li><li><a href="global.html#ev3_motorStart">ev3_motorStart</a></li><li><a href="global.html#ev3_motorStop">ev3_motorStop</a></li><li><a href="global.html#ev3_pause">ev3_pause</a></li><li><a href="global.html#ev3_playSequence">ev3_playSequence</a></li><li><a href="global.html#ev3_reflectedLightIntensity">ev3_reflectedLightIntensity</a></li><li><a href="global.html#ev3_runForDistance">ev3_runForDistance</a></li><li><a href="global.html#ev3_runForTime">ev3_runForTime</a></li><li><a href="global.html#ev3_runToAbsolutePosition">ev3_runToAbsolutePosition</a></li><li><a href="global.html#ev3_runToRelativePosition">ev3_runToRelativePosition</a></li><li><a href="global.html#ev3_runUntil">ev3_runUntil</a></li><li><a href="global.html#ev3_speak">ev3_speak</a></li><li><a href="global.html#ev3_stop">ev3_stop</a></li><li><a href="global.html#ev3_touchSensor1">ev3_touchSensor1</a></li><li><a href="global.html#ev3_touchSensor2">ev3_touchSensor2</a></li><li><a href="global.html#ev3_touchSensor3">ev3_touchSensor3</a></li><li><a href="global.html#ev3_touchSensor4">ev3_touchSensor4</a></li><li><a href="global.html#ev3_touchSensorPressed">ev3_touchSensorPressed</a></li><li><a href="global.html#ev3_ultrasonicSensor">ev3_ultrasonicSensor</a></li><li><a href="global.html#ev3_ultrasonicSensorDistance">ev3_ultrasonicSensorDistance</a></li><li><a href="global.html#ev3_waitForButtonPress">ev3_waitForButtonPress</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.3</a> on Mon Oct 07 2019 22:49:50 GMT+0800 (Singapore Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.3</a> on Thu Oct 10 2019 00:27:05 GMT+0800 (Singapore Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>
