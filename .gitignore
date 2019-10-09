@@ -1,6 +1,8 @@
 brickstrap.sh
 node_modules/babel-transpiler.js
 node_modules/parser.js
+node_modules/jison_parser.js
+node_modules/estree_transpiler.js
 *.img
 *.gz
 *.zip

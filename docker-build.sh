@@ -5,10 +5,15 @@ if [ ! -e brickstrap.sh ]; then
     exit 1
 fi
 
-pushd sourcetoes5
+pushd sourcetoes5/jison
 yarn install && yarn jison parser.jison || exit 1
 popd
-cp sourcetoes5/parser.js node_modules/parser.js || exit 1
+cp sourcetoes5/jison/parser.js node_modules/jison_parser.js || exit 1
+
+pushd estree-transpiler
+yarn install && yarn build || exit 1
+popd
+cp estree-transpiler/dist/estree-transpiler.js node_modules/estree_transpiler.js || exit 1
 
 pushd babel-transpiler
 yarn install && yarn build || exit 1

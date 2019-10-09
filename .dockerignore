@@ -1,2 +1,6 @@
 babel-transpiler
+estree-transpiler
+sourcetoes5
 node_modules/ev3source/array.spec.js
+*.zip
+*.img
