@@ -442,13 +442,13 @@ exports.playSequence = function(beeps) {
     return;
   }
 
-  var acc = "beep ";
   for (var i = 0; i + 2 < beeps.length; i += 3) {
+    var acc = "beep ";
     acc += " -f " + beeps[i].toString() +
            " -l " + beeps[i + 1].toString() +
            " -D " + beeps[i + 2].toString();
+    exec(acc);
   }
-  exec(acc);
 };
 
 /**
