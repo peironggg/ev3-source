@@ -20,4 +20,9 @@ yarn install && yarn build || exit 1
 popd
 cp babel-transpiler/dist/babel-transpiler.js node_modules/babel-transpiler.js || exit 1
 
+pushd stdlib
+yarn install && yarn build || exit 1
+popd
+cp stdlib/dist/stdlib.js node_modules/stdlib.js || exit 1
+
 docker build -t ev3-source . || exit 1

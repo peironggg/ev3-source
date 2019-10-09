@@ -5,7 +5,7 @@ if (process.argv.length != 3) {
     process.exit(1);
 }
 
-require('/usr/local/lib/node_modules/ev3_source.js');
+require('/usr/local/lib/node_modules/stdlib.js');
 
 (function() {
     var fs = require('fs');
