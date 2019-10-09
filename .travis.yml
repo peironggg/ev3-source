@@ -23,6 +23,8 @@ addons:
 deploy:
   edge: true
   provider: releases
-  file: ev3-source.img.zip
+  file:
+    - ev3-source.img.zip
+    - ev3-source-update.sh
   on:
     tags: true

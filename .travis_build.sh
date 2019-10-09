@@ -2,4 +2,5 @@
 
 sudo chmod +r /boot/vmlinuz-*
 
-. ./build.sh
+bash ./build.sh
+bash ./build-updater.sh

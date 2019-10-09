@@ -3,3 +3,4 @@ node_modules
 *.img
 *.gz
 *.zip
+ev3-source-update.sh
