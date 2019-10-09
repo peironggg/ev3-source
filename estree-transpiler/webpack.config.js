@@ -4,7 +4,7 @@ module.exports = {
   entry: './index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'babel-transpiler.js',
+    filename: 'estree-transpiler.js',
     libraryTarget: 'commonjs2',
   },
   module: {
@@ -19,8 +19,6 @@ module.exports = {
               targets: {
                 "node": "0.10"
               },
-              corejs: 3,
-              useBuiltIns: 'entry'
             }]]
           }
         }

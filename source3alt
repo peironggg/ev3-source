@@ -44,9 +44,30 @@ require('/usr/local/lib/node_modules/ev3_source.js');
         var transformed = undefined;
         var source_in = fs.readFileSync(source_fn, { encoding: 'utf8' });
 
-        var parser = require('/usr/local/lib/node_modules/estree-transpiler.js');
+        var parser = require('/usr/local/lib/node_modules/jison_parser.js');
         transformed = parser.parse(source_in);
-        result = new Function(transformed);
+        try {
+            result = new Function(transformed);
+        } catch (e) {
+            if (e instanceof SyntaxError) {
+                // jison returned invalid JS
+                // let's use Bison
+                console.error("Jison produced invalid output; please send this output to your Avenger!");
+                console.error(source_in);
+                console.error("Jison produced invalid output; please send this output to your Avenger!");
+                console.error("SyntaxError parsing Jison result: " + e.message);
+            } else {
+                throw e;
+            }
+        }
+
+        if (result === undefined) {
+            console.error("Warning: using Babel; this may take a while.");
+            console.error("Please send a copy of your current program to your Avenger if you see this message!");
+            var babel = require('/usr/local/lib/node_modules/babel-transpiler.js');
+            transformed = babel.transform(source_in);
+            result = new Function(transformed);
+        }
 
         try {
             fs.writeFileSync(cache_fn, transformed);
