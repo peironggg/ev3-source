@@ -8,7 +8,9 @@ popd
 cp sourcetoes5/jison/parser.js node_modules/jison-transpiler.js || exit 1
 
 pushd estree-transpiler
-yarn install && yarn build || exit 1
+# drop cache because of file: package
+rm -rf node_modules/sourcetoes5
+yarn install --force && yarn build || exit 1
 popd
 cp estree-transpiler/dist/estree-transpiler.js node_modules/estree-transpiler.js || exit 1
 
