@@ -322,7 +322,7 @@ Note that there may be some warnings about file times in the future. That is nor
     ```bash
     $ chmod a+x hello.js
     ```
-NOTE: Do not include '$' when running the command.
+    NOTE: Do not include '$' when running the command.
 
 1.  On the robot screen, you can now go to the File Manager:
 
